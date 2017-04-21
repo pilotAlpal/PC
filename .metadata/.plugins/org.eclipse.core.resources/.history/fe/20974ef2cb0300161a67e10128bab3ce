@@ -1,0 +1,19 @@
+package dos;
+
+import java.util.Stack;
+
+public class AlmacenNproductos<Pr> implements Almacen<Pr> {
+	private Stack<Pr> pila;
+	@Override
+	public void almacenar(Pr producto) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Pr extraer() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

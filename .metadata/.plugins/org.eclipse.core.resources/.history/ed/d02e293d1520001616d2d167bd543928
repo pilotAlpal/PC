@@ -1,0 +1,55 @@
+package p5;
+
+import java.io.IOException;
+import java.net.Socket;
+import java.util.Scanner;
+
+public class MenuUsuario extends Thread {
+
+	private Socket mySocket;
+	public MenuUsuario(Socket s) {
+		mySocket=s;
+	}
+
+	@Override
+	public void run() {
+		while (true){
+			/* Una vez iniciada la sesion, el cliente 
+			 * puede realizar 2 tipos de consultas  conocer el nombre
+			 * de todos los usuarios conectados o descargar ficheros.*/
+			System.out.println("Que deseas hacer?");
+			System.out.println("1) Mostrar lista usuarios");
+			System.out.println("2) Pedir fichero");
+			System.out.println("3) Cerrar conexión");
+			Scanner teclado = new Scanner(System.in);
+			int op = teclado.nextInt();
+			switch (op) {
+			case 1:
+			break;
+			case 2:
+
+				 /* Una vez el usuario elija el fichero a descargar, comenzar´a el proceso de descarga
+				 *(en realidad se descarga directamente de la m´aquina del usuario propietario) de tal
+				 *forma que el programa cliente siga su curso natural, y en particular permitiendo que
+				 *se realicen otras consultas e incluso otras descargas mientras continua la descarga
+				 *del primer fichero (concurrencia).*/
+				System.out.println("Que fichero quieres?");
+				String nombreFichero = teclado.nextLine();
+			break;
+			case 3:
+				try {
+					mySocket.close();
+				} 
+				catch (IOException e) {
+					e.printStackTrace();
+				}
+			break ;
+			default:
+				System.out.println("Opción inválida");
+			break;
+			}
+		}
+		
+	}
+
+}

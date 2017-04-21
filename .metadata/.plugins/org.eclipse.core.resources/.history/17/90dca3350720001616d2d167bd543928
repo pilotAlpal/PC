@@ -1,0 +1,16 @@
+package p5;
+/**
+ * Clase Mensaje (abstracta): Sirve como ra´ız de la jerarqu´ıa de mensajes que deberemos
+dise˜nar. Tiene como atributos al tipo, origen y destino del mensaje en cuesti´on;
+y declara al menos los siguientes m´etodos:
+public int getTipo();
+public String getOrigen();
+public String getDestino();
+ * @author Propietario
+ *
+ */
+public abstract class Mensaje {
+
+	public abstract void tratarMensajeDeServidor() ;
+	public abstract void tratarMensajeDeCliente() ;
+}

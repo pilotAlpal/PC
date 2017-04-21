@@ -1,0 +1,28 @@
+package tres;
+
+import java.util.DeQueue;
+
+import dos.Almacen;
+
+public class AlmacenNproductos<Pr> implements Almacen<Pr> {
+	private DeQueue<Pr> cola;
+	@Override
+	public void almacenar(Pr producto) {
+		cola.add(producto);
+		
+	}
+
+	@Override
+	public Pr extraer() {
+		
+		if(almacenVacio())
+			System.err.println("Intentando extraer con el contenedor vacio");
+		return pila.pop();
+	}
+
+	@Override
+	public boolean almacenVacio() {
+		return pila.isEmpty();
+	}
+
+}

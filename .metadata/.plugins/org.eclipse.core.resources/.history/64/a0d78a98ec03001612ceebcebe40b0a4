@@ -1,0 +1,29 @@
+package tres;
+
+import java.util.concurrent.Semaphore;
+
+public class Main2 {
+
+	public static void main(String[] args) {
+		
+		AlmacenNproductos<Integer> almacen = new AlmacenNproductos<Integer>();
+		Semaphore semaforo = new Semaphore(1);
+		ConsumidorN<Integer> consumidor = new ConsumidorN<Integer>(almacen, semaforo);
+		ProductorN<Integer> productor = new ProductorN<Integer>(almacen,semaforo);
+		productor.start();
+		consumidor.start();
+		try {
+			consumidor.join();
+		} catch (InterruptedException e) {
+			System.err.println("Error join del consumidor");
+			e.printStackTrace();
+		}
+		try {
+			productor.join();
+		} catch (InterruptedException e) {
+			System.err.println("Error join del productor");
+			e.printStackTrace();
+		}
+	}
+
+}

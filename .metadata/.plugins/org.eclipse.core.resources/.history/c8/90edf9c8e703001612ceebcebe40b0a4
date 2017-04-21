@@ -1,0 +1,7 @@
+package tres;
+
+import java.lang.Thread;
+
+public class ProductorN<T> extends Thread {
+
+}

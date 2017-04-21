@@ -1,0 +1,11 @@
+package tres;
+
+import java.util.concurrent.Semaphore;
+
+public class ConsumidorN<T> extends Thread {
+
+	public ConsumidorN(AlmacenNproductos<Integer> almacen, Semaphore semaforo) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

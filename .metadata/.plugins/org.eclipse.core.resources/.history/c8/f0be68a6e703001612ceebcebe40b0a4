@@ -1,0 +1,7 @@
+package tres;
+
+import T;
+
+public class ProductorN<T> extends T {
+
+}

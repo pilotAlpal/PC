@@ -1,0 +1,12 @@
+package tres;
+
+import java.lang.Thread;
+import java.util.concurrent.Semaphore;
+
+public class ProductorN<T> extends Thread {
+
+	public ProductorN(AlmacenNproductos<Integer> almacen, Semaphore semaforo) {
+		
+	}
+
+}

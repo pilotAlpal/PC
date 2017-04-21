@@ -1,0 +1,23 @@
+package p5;
+
+public class MensajeConfListaUsuarios extends Mensaje {
+
+	@Override
+	public TipoMensaje getTipo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getOrigen() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getDestino() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

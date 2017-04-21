@@ -1,0 +1,24 @@
+package uno;
+public class Main {
+
+	static final int T = 14;
+	static final int n = 14;
+	static MyThread hilos[];
+	public static void main(String[] args) {
+		hilos = new MyThread[n];
+		for (int i=0;i<n;i++){
+			hilos[i]=new MyThread(i, T);
+			hilos[i].start();
+		/*	try {
+		 * Poner join en otro bule
+				hilos[i].join();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}*/
+			//Diferencia de ejecucion con y sin join
+		}
+	System.out.println("Final");
+	}
+
+}

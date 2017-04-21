@@ -1,0 +1,5 @@
+package tres;
+
+public class ConsumidorN<T> extends Thread {
+
+}

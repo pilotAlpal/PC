@@ -1,0 +1,15 @@
+package dos;
+
+public class Productor<P> extends Thread {
+	MiAlmacen<P> miAlmacen;
+	public Productor(MiAlmacen<P> a) {
+		miAlmacen=a;
+	}
+	@Override
+	public void run(){
+		//puedo evitar este casteo?
+		P p = (P) new Integer(8);
+		miAlmacen.almacenar(p);
+	}
+
+}
